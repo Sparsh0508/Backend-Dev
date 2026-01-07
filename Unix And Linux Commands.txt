@@ -1,452 +1,158 @@
 
-============================================================
-UNIX, GIT & GITHUB LAB RECORD
-============================================================
+UNIX, GIT & GITHUB COMMANDS
+==========================
 
-Student Name : ___________________________
-Roll Number  : ___________________________
-Subject      : Unix, Git & GitHub
-============================================================
+--------------------------------------------------
+MODULE 1: UNIX BASIC COMMANDS
+--------------------------------------------------
 
-NOTE:
-All outputs shown below are SAMPLE OUTPUTS.
-Actual outputs may vary depending on system configuration.
-
-============================================================
-MODULE 1: UNIX ENVIRONMENT & BASIC COMMANDS
-============================================================
-
-Experiment 1: Print Working Directory
+1. pwd
 Command:
 pwd
 Output:
-/home/user
+/home/user/projects
 
-------------------------------------------------------------
-Experiment 2: List Directory Contents
+2. ls
 Command:
 ls
 Output:
-Documents Downloads file.txt
+Documents  Downloads  file.txt
 
+3. ls -l
 Command:
 ls -l
 Output:
--rw-r--r-- 1 user user 1024 file.txt
+-rw-r--r-- 1 user user  1024 file.txt
 
+4. mkdir test
 Command:
-ls -a
-Output:
-. .. .hidden file.txt
-
-------------------------------------------------------------
-Experiment 3: Change Directory
-Command:
-cd /home/user
+mkdir test
 Output:
 (No output)
 
+5. cd test
 Command:
-cd ..
+cd test
 Output:
 (No output)
 
-------------------------------------------------------------
-Experiment 4: Directory Operations
+6. touch demo.txt
 Command:
-mkdir demo
+touch demo.txt
 Output:
 (No output)
 
+7. rm demo.txt
 Command:
-mkdir -p dir1/dir2/dir3
+rm demo.txt
 Output:
 (No output)
 
+8. cat file.txt
 Command:
-rmdir demo
-Output:
-(No output)
-
-------------------------------------------------------------
-Experiment 5: File Operations
-Command:
-touch sample.txt
-Output:
-(No output)
-
-Command:
-cp sample.txt copy.txt
-Output:
-(No output)
-
-Command:
-mv copy.txt renamed.txt
-Output:
-(No output)
-
-Command:
-rm renamed.txt
-Output:
-(No output)
-
-------------------------------------------------------------
-Experiment 6: File Content Commands
-Command:
-cat sample.txt
+cat file.txt
 Output:
 Hello World
 
+9. head file.txt
 Command:
-less sample.txt
-Output:
-Displays file content page by page
-
-Command:
-head sample.txt
+head file.txt
 Output:
 Hello World
 
+10. tail file.txt
 Command:
-tail sample.txt
+tail file.txt
 Output:
 Hello World
 
+11. grep "Hello" file.txt
 Command:
-wc sample.txt
-Output:
-1 2 12 sample.txt
-
-------------------------------------------------------------
-Experiment 7: File Permissions
-Command:
-ls -l
-Output:
--rw-r--r-- 1 user user 12 sample.txt
-
-Command:
-chmod 755 sample.txt
-Output:
-(No output)
-
-Command:
-chmod +x sample.txt
-Output:
-(No output)
-
-------------------------------------------------------------
-Experiment 8: Text Processing
-Command:
-grep "Hello" sample.txt
+grep "Hello" file.txt
 Output:
 Hello World
 
+12. chmod 755 script.sh
 Command:
-grep -i "hello" sample.txt
-Output:
-Hello World
-
-Command:
-find /home/user -name "*.txt"
-Output:
-/home/user/sample.txt
-
-Command:
-sed 's/Hello/Hi/g' sample.txt
-Output:
-Hi World
-
-Command:
-awk '{print $1}' sample.txt
-Output:
-Hello
-
-Command:
-sort sample.txt
-Output:
-Hello World
-
-Command:
-uniq sample.txt
-Output:
-Hello World
-
-------------------------------------------------------------
-Experiment 9: System Information
-Command:
-whoami
-Output:
-user
-
-Command:
-hostname
-Output:
-ubuntu
-
-Command:
-uname -a
-Output:
-Linux ubuntu 5.15.0 x86_64
-
-Command:
-df -h
-Output:
-Filesystem Size Used Avail Use%
-/dev/sda1 50G 20G 28G 42%
-
-Command:
-du -sh demo
-Output:
-4.0K demo
-
-Command:
-ps aux
-Output:
-user 1234 0.0 0.1 bash
-
-Command:
-top
-Output:
-Displays running processes
-
-Command:
-kill 1234
+chmod 755 script.sh
 Output:
 (No output)
 
-------------------------------------------------------------
-Experiment 10: Redirection & Pipes
-Command:
-ls > files.txt
-Output:
-(No output)
+--------------------------------------------------
+MODULE 2: GIT BASIC COMMANDS
+--------------------------------------------------
 
-Command:
-cat files.txt | grep ".txt"
-Output:
-sample.txt
-
-Command:
-ls error 2> error.log
-Output:
-(No output)
-
-============================================================
-MODULE 2: VERSION CONTROL SYSTEMS
-============================================================
-
-Experiment 11: Git Installation
-Command:
-git --version
-Output:
-git version 2.39.0
-
-============================================================
-MODULE 3: GIT BASICS
-============================================================
-
-Experiment 12: Git Configuration
-Command:
-git config --global user.name "Your Name"
-Output:
-(No output)
-
-Command:
-git config --global user.email "email@example.com"
-Output:
-(No output)
-
-Command:
-git config --list
-Output:
-user.name=Your Name
-user.email=email@example.com
-
-------------------------------------------------------------
-Experiment 13: Repository Initialization
+1. git init
 Command:
 git init
 Output:
 Initialized empty Git repository
 
+2. git status
 Command:
 git status
 Output:
 On branch main
-nothing to commit
+nothing to commit, working tree clean
 
-------------------------------------------------------------
-Experiment 14: Staging & Commit
+3. git add .
 Command:
 git add .
 Output:
 (No output)
 
+4. git commit -m "Initial commit"
 Command:
 git commit -m "Initial commit"
 Output:
 [main abc123] Initial commit
+ 1 file changed
 
-------------------------------------------------------------
-Experiment 15: Viewing History
-Command:
-git log
-Output:
-commit abc123
-Author: User
-
+5. git log --oneline
 Command:
 git log --oneline
 Output:
 abc123 Initial commit
 
-------------------------------------------------------------
-Experiment 16: Undo Operations
-Command:
-git reset HEAD file.txt
-Output:
-(No output)
+--------------------------------------------------
+MODULE 3: BRANCHING
+--------------------------------------------------
 
-Command:
-git checkout -- file.txt
-Output:
-(No output)
-
-Command:
-git commit --amend -m "Updated message"
-Output:
-Commit message updated
-
-============================================================
-MODULE 4: BRANCHING & MERGING
-============================================================
-
-Experiment 17: Branch Operations
-Command:
-git branch
-Output:
-* main
-
+1. git branch feature
 Command:
 git branch feature
 Output:
 (No output)
 
+2. git checkout feature
 Command:
 git checkout feature
 Output:
 Switched to branch 'feature'
 
-Command:
-git branch -d feature
-Output:
-Deleted branch feature
-
-------------------------------------------------------------
-Experiment 18: Merging
+3. git merge feature
 Command:
 git merge feature
 Output:
-Merge completed successfully
+Already up to date.
 
-------------------------------------------------------------
-Experiment 19: Conflict Resolution
-Command:
-git status
-Output:
-Unmerged paths
+--------------------------------------------------
+MODULE 4: REMOTE REPOSITORY
+--------------------------------------------------
 
-Command:
-git merge --abort
-Output:
-Merge aborted
-
-============================================================
-MODULE 5: REMOTE REPOSITORIES
-============================================================
-
-Experiment 20: Remote Operations
+1. git remote -v
 Command:
 git remote -v
 Output:
-origin https://github.com/user/repo.git
+origin  https://github.com/user/repo.git (fetch)
+origin  https://github.com/user/repo.git (push)
 
+2. git push origin main
 Command:
-git push -u origin main
+git push origin main
 Output:
-Branch main set up to track origin/main
+Everything up-to-date
 
-Command:
-git pull origin main
-Output:
-Already up to date
-
-============================================================
-MODULE 6: GITHUB
-============================================================
-
-Experiment 21: GitHub Workflow
-Command:
-git clone https://github.com/user/repo.git
-Output:
-Cloning into 'repo'
-
-Command:
-git push origin feature
-Output:
-Done
-
-------------------------------------------------------------
-Experiment 22: Pull Requests
-Output:
-Pull request created on GitHub interface
-
-============================================================
-MODULE 7: ADVANCED GIT
-============================================================
-
-Experiment 23: Git Tags
-Command:
-git tag v1.0
-Output:
-(No output)
-
-Command:
-git push origin --tags
-Output:
-Tags pushed
-
-------------------------------------------------------------
-Experiment 24: Git Stash
-Command:
-git stash
-Output:
-Saved working directory
-
-Command:
-git stash list
-Output:
-stash@{0}
-
-Command:
-git stash pop
-Output:
-Changes restored
-
-------------------------------------------------------------
-Experiment 25: Cherry Pick
-Command:
-git cherry-pick abc123
-Output:
-Cherry-pick successful
-
-------------------------------------------------------------
-Experiment 26: Git Submodules
-Command:
-git submodule add https://github.com/user/lib.git
-Output:
-Submodule added
-
-============================================================
-END OF LAB RECORD
-============================================================
+--------------------------------------------------
+END OF FILE
+--------------------------------------------------
