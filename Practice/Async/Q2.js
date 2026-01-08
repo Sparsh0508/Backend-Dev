@@ -30,7 +30,7 @@ function checkSubscription(user) {
     });
 }
 
-async function authenticateUser(username) {
+async function Consumer(username) {
     try {
         const user = await getUser(username);          
         const access = await checkSubscription(user);  
@@ -40,4 +40,4 @@ async function authenticateUser(username) {
     }
 }
 
-authenticateUser("Rahul");
+Consumer("Rahul");
