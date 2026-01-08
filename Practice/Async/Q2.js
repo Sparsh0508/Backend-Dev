@@ -9,13 +9,18 @@
 // resolve with "Access Granted to Netflix". Otherwise, reject with
 // "Please Subscribe".
 
+
 // ● The Requirement: Create a "Consumer" function that calls getUser first, then passes
 // that result into checkSubscription.
 
 function getUser(username) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve({ name: "Rahul", type: "Premium" });
+            if (username !== "Rahul") {
+                reject("User not found");
+            } else {
+                resolve({ name: "Rahul", type: "Premium" });
+            }
         }, 1500);
     });
 }
@@ -41,3 +46,4 @@ async function Consumer(username) {
 }
 
 Consumer("Rahul");
+Consumer("Sanya");
